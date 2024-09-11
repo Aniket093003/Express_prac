@@ -43,5 +43,12 @@ app.post("/", (req, res) => {
   });
   
   
- 
+  app.put("/", (req, res) => {
+    for (let i = 0; i < users[0].fever.length; i++) {
+      users[0].fever[i].health = true;
+    }
+    res.json({});
+  })
+  
+  
 app.listen(3000);
