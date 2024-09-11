@@ -33,34 +33,15 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-  const ishealthy = req.body.ishealthy;
-  users[0].fever.push({
-    health: ishealthy,
+    const ishealthy = req.body.ishealthy;
+    users[0].fever.push({
+      health: ishealthy,
+    });
+    res.json({
+      msg: "done!",
+    });
   });
-  res.json({
-    msg: "done!",
-  });
-});
-
-
-app.put("/", (req, res) => {
-  for (let i = 0; i < users[0].fever.length; i++) {
-    users[0].fever[i].health = true;
-  }
-  res.json({});
-})
-
-app.delete("/", (req, res) => {
-    const newfever =  [];
-  for (let i = 0; i < users[0].fever.length; i++) {
-    if(users[0].fever[i].health){
-        newfever.push({
-            health: true
-        })
-    }
-  }
-  users[0].fever = newfever
-  res.json({});
-})
-
+  
+  
+ 
 app.listen(3000);
